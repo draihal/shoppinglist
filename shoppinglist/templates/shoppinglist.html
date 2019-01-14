@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Simple shopping list{% endblock %}
+
+{% block content %}
+<h1 class="text-muted text-center mb-4">Simple shopping list</h1>
+<div class="content container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <table class="table shoppinglisttable">
+        {% for shoppinglist_item in all_items %}
+          <tbody>
+            <tr>
+              <td>
+                {% if shoppinglist_item.done %}
+                <form action="/undone-shoppinglist-item/{{ shoppinglist_item.id }}/"
+                          method="post">{% csrf_token %}
+                  <button type="Submit" class="btn btn-light btn-sm" value="Undone">
+                    <img src="{% static 'images/_ionicons_svg_ios-checkbox-outline.svg' %}"
+                                  alt="trash-icon" height="22" width="22"></img>
+                    <strong><del>{{ shoppinglist_item.shoppinglist_item }}</del></strong>
+                  </button>
+                </form>
+                {% else %}
+                <form action="/done-shoppinglist-item/{{ shoppinglist_item.id }}/"
+                            method="post">{% csrf_token %}
+                  <button type="Submit" class="btn btn-light btn-sm" value="Done">
+                    <img src="{% static 'images/_ionicons_svg_ios-square-outline.svg' %}"
+                                    alt="trash-icon" height="22" width="22"></img>
+                    <strong>{{ shoppinglist_item.shoppinglist_item }}</strong>
+                  </button>
+                </form>
+                {% endif %}
+              </td>
+              <td class="text-right">
+                <form action="/delete-shoppinglist-item/{{ shoppinglist_item.id }}/"
+                            style="display: inline;"
+                            method="post">{% csrf_token %}
+                  <button type="Submit" class="btn btn-light btn-sm" value="Delete">
+                    <img src="{% static 'images/_ionicons_svg_md-trash.svg' %}"
+                                    alt="trash-icon" height="22" width="22"></img>
+                  </button>
+                </form>
+              </td>
+            </tr>
+          </tbody>
+        {% endfor %}
+      </table>
+      <form action="/add-shoppinglist-item/"
+                class="form-inline"
+                method="post">{% csrf_token %}
+        <input type="text" class="form-control col-10" placeholder="cookie" name="content" autofocus/>
+        <button type="submit" class="btn btn-info" value="Add">Add</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock content %}
