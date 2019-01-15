@@ -6,7 +6,7 @@
 <h1 class="text-muted text-center mb-4">Simple shopping list</h1>
 <div class="content container">
   <div class="row justify-content-center">
-    <div class="col-md-6">
+    <div class="col-md-6 minwidthshoppinglist">
       <table class="table shoppinglisttable">
         {% for shoppinglist_item in all_items %}
           <tbody>
@@ -47,11 +47,17 @@
         {% endfor %}
       </table>
       <form action="/add-shoppinglist-item/"
-                class="form-inline"
                 method="post">{% csrf_token %}
-        <input type="text" class="form-control col-10" placeholder="cookie" name="content" autofocus/>
-        <button type="submit" class="btn btn-info" value="Add">Add</button>
+        <div class="form-row">
+          <div class="col-9">
+            <input type="text" class="form-control" placeholder="cookie" name="content" autofocus/>
+          </div>
+          <div class="col">
+            <button type="submit" class="btn btn-info form-control" value="Add">Add</button>
+          </div>
+        </div>
       </form>
+
     </div>
   </div>
 </div>

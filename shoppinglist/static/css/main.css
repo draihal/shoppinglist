@@ -14,3 +14,11 @@ form .alert ul {
 .shoppinglisttable {
   font-size: 1.4rem;
 }
+
+.minwidth {
+  min-width: 280px;
+}
+
+.minwidthshoppinglist {
+  min-width: 315px;
+}
