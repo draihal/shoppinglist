@@ -1,0 +1,24 @@
+version: '3'
+volumes:
+  pgdata:
+services:
+  python:
+    # image: python:3.4
+    build:
+      context: .
+      dockerfile: docker/python/Dockerfile
+    volumes:
+      - .:/code
+    ports:
+      - 8000:8000
+    command: python manage.py runserver 0.0.0.0:8000
+  postgres:
+    image: postgres:10.3
+    environment:
+      POSTGRES_USER: shoppinglist
+      POSTGRES_DB: shoppinglist
+      POSTGRES_PASS: shoppinglist
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - 5432:5432

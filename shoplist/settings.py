@@ -25,7 +25,7 @@ SECRET_KEY = SECRET_KEY_S
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com', 'localhost', '0.0.0.0']
 
 
 INSTALLED_APPS = [
@@ -97,10 +97,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'shoppinglist',
-        'USER': 'draihal',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '',
+        'USER': 'shoppinglist',
+        #'PASSWORD': 'shoppinglist',
+        'HOST': 'postgres',
+        'PORT': '5432',
     }
 }
 
