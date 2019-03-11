@@ -1,7 +1,7 @@
 # [Simple shopping list.](https://simpleshoppinglist.herokuapp.com/)
 
 ## About
-This is a simple shopping list example. It runs on [heroku](https://simpleshoppinglist.herokuapp.com/) and uses Django, PostgreSQL, social-auth-app-django, Bootstrap, crispy-forms, ionicons.com, gunicorn and whitenoise.
+This is a simple shopping list example. It runs on [heroku](https://simpleshoppinglist.herokuapp.com/) and uses Django, PostgreSQL, social-auth-app-django, Bootstrap, crispy-forms and ionicons.com.
 
 ## Description
 The app provides a possibility to maintain shopping lists.
