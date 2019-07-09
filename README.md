@@ -18,6 +18,3 @@ The app provides a possibility to maintain shopping lists.
 ## Screenshots
 ![shoppinglist_screenshot](https://pictr.com/images/2019/01/15/0c0lN2.jpg) ![shoppinglist_screenshot](https://pictr.com/images/2019/01/15/0c06tl.jpg)
 ![shoppinglist_screenshot](https://pictr.com/images/2019/01/15/0c0iAj.jpg) ![shoppinglist_screenshot](https://pictr.com/images/2019/01/15/0c0U1P.jpg)
-
-## Contact
-[Telegram](http://telegram.me/draihal)
